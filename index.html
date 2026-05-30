@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:linear-gradient(-45deg,#ff6b9d,#ff8fab,#c77dff,#7b2cbf);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    color:white;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.slider{
+    display:flex;
+    width:500vw;
+    height:100vh;
+    transition:0.8s ease;
+}
+
+.slide{
+    width:100vw;
+    height:100vh;
+    flex-shrink:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    position:relative;
+}
+
+.card{
+    width:min(92%,520px);
+    padding:30px;
+    border-radius:30px;
+    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+h1{
+    font-size:2.3rem;
+    margin-bottom:15px;
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+p{
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+.emoji{
+    font-size:4rem;
+    margin-bottom:15px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+.nav{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:12px;
+    z-index:1000;
+}
+
+button{
+    border:none;
+    padding:12px 20px;
+    border-radius:50px;
+    background:white;
+    color:#ff4f8b;
+    font-weight:700;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.dots{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:10px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:rgba(255,255,255,.4);
+}
+
+.dot.active{
+    background:white;
+    box-shadow:0 0 10px white;
+}
+
+/* Gift Box */
+
+.gift{
+    font-size:100px;
+    cursor:pointer;
+    animation:shake 1s infinite;
+}
+
+@keyframes shake{
+    25%{transform:rotate(-5deg);}
+    75%{transform:rotate(5deg);}
+}
+
+.hidden{
+    display:none;
+}
+
+.surprise{
+    margin-top:20px;
+    animation:pop .8s ease;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(.3);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* Confetti */
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    top:-10px;
+    z-index:9999;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+/* Hearts */
+
+.heart{
+    position:fixed;
+    bottom:-20px;
+    color:white;
+    animation:floatHeart linear forwards;
+    z-index:0;
+}
+
+@keyframes floatHeart{
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+/* Final Title */
+
+.final{
+    font-size:3rem;
+    font-weight:bold;
+    animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px white;
+    }
+    to{
+        text-shadow:0 0 30px #fff,0 0 50px pink;
+    }
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:1.8rem;
+    }
+
+    p{
+        font-size:.95rem;
+    }
+
+    .emoji{
+        font-size:3rem;
+    }
+
+    .gift{
+        font-size:80px;
+    }
+
+    .final{
+        font-size:2rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<div class="slider" id="slider">
+
+<!-- Slide 1 -->
+<section class="slide">
+<div class="card">
+<div class="emoji">🎁</div>
+<h1>A Special Surprise Awaits...</h1>
+<p>
+Today is not an ordinary day.
+A truly amazing person is celebrating another year of life.
+Swipe or click Next to continue ❤️
+</p>
+</div>
+</section>
+
+<!-- Slide 2 -->
+<section class="slide">
+<div class="card">
+<div class="emoji">✨</div>
+<h1>The World Got Better Today</h1>
+<p>
+Because on this day, someone wonderful came into this world.
+Someone who spreads smiles, happiness, kindness and love.
+</p>
+</div>
+</section>
+
+<!-- Slide 3 -->
+<section class="slide">
+<div class="card">
+<div class="emoji">💖</div>
+<h1>Birthday Wishes</h1>
+<p>
+🌟 May your dreams come true<br>
+🌈 May happiness follow you always<br>
+🚀 May success find you everywhere<br>
+❤️ May love surround you forever<br>
+🎉 May every day feel special
+</p>
+</div>
+</section>
+
+<!-- Slide 4 -->
+<section class="slide">
+<div class="card">
+<h1>Tap Your Gift 🎁</h1>
+
+<div class="gift" onclick="openGift()">
+🎁
+</div>
+
+<div id="surprise" class="surprise hidden">
+<h2>🎉 Surprise! 🎉</h2>
+<p>
+You are loved.<br>
+You are appreciated.<br>
+You are important.<br>
+You are absolutely amazing. ❤️
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- Slide 5 -->
+<section class="slide">
+<div class="card">
+<div class="emoji">🎂</div>
+
+<div class="final">
+HAPPY BIRTHDAY
+</div>
+
+<h1>YOUR NAME ❤️</h1>
+
+<p>
+May this year bring endless joy,
+beautiful memories,
+new adventures,
+great success,
+and lots of laughter.
+
+<br><br>
+
+You deserve all the happiness in the world.
+
+🎉🎂🎈❤️
+</p>
+
+<button onclick="celebrate()">
+Celebrate Again 🎊
+</button>
+
+</div>
+</section>
+
+</div>
+
+<div class="nav">
+<button onclick="prevSlide()">◀</button>
+<button onclick="nextSlide()">▶</button>
+</div>
+
+<script>
+
+let current=0;
+const slider=document.getElementById('slider');
+const dots=document.querySelectorAll('.dot');
+
+function updateSlide(){
+slider.style.transform=`translateX(-${current*100}vw)`;
+
+dots.forEach(dot=>dot.classList.remove('active'));
+dots[current].classList.add('active');
+
+if(current===4){
+celebrate();
+}
+}
+
+function nextSlide(){
+if(current<4){
+current++;
+updateSlide();
+}
+}
+
+function prevSlide(){
+if(current>0){
+current--;
+updateSlide();
+}
+}
+
+/* Swipe Support */
+
+let startX=0;
+
+document.addEventListener('touchstart',e=>{
+startX=e.touches[0].clientX;
+});
+
+document.addEventListener('touchend',e=>{
+let endX=e.changedTouches[0].clientX;
+
+if(startX-endX>50) nextSlide();
+if(endX-startX>50) prevSlide();
+});
+
+/* Gift Surprise */
+
+function openGift(){
+
+document.getElementById('surprise')
+.classList.remove('hidden');
+
+burstConfetti(150);
+}
+
+/* Confetti */
+
+const colors=[
+'#ff4d6d',
+'#ffd93d',
+'#6bcf63',
+'#4d96ff',
+'#ffffff',
+'#ff9f1c'
+];
+
+function createConfetti(){
+
+const conf=document.createElement('div');
+
+conf.className='confetti';
+
+conf.style.left=Math.random()*100+'vw';
+
+conf.style.background=
+colors[Math.floor(Math.random()*colors.length)];
+
+conf.style.width=(Math.random()*8+5)+'px';
+conf.style.height=(Math.random()*14+8)+'px';
+
+conf.style.animation=
+`fall ${Math.random()*3+3}s linear`;
+
+document.body.appendChild(conf);
+
+setTimeout(()=>{
+conf.remove();
+},7000);
+}
+
+function burstConfetti(amount){
+
+for(let i=0;i<amount;i++){
+
+setTimeout(()=>{
+createConfetti();
+},i*10);
+
+}
+}
+
+setInterval(()=>{
+createConfetti();
+},200);
+
+/* Floating Hearts */
+
+function createHeart(){
+
+const heart=document.createElement('div');
+
+heart.className='heart';
+
+heart.innerHTML='❤️';
+
+heart.style.left=Math.random()*100+'vw';
+
+heart.style.fontSize=
+(Math.random()*20+15)+'px';
+
+heart.style.animationDuration=
+(Math.random()*5+5)+'s';
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},9000);
+}
+
+setInterval(createHeart,700);
+
+/* Final Celebration */
+
+function celebrate(){
+
+burstConfetti(300);
+
+for(let i=0;i<50;i++){
+
+setTimeout(()=>{
+createHeart();
+},i*80);
+
+}
+}
+
+</script>
+
+</body>
+</html>
